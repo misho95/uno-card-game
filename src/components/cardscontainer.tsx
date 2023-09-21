@@ -1,9 +1,9 @@
-const CardContainer = ({ children }) => {
+const CardContainer = ({ children, rotate }) => {
   return (
     <div
-      className="relative"
+      className={`relative ${rotate} h-44`}
       style={{
-        width: `${children.length > 0 ? children.length * 73 : 160}px`,
+        width: `${children.length > 0 ? children.length * 73 : 150}px`,
       }}
     >
       {children.length > 0
@@ -14,7 +14,7 @@ const CardContainer = ({ children }) => {
               style={{
                 position: "absolute",
                 top: `${0}px`, // Adjust the spacing between cards
-                left: `${index * (60 - children.length)}px`, // Adjust the spacing between cards
+                left: `${index * (60 - children.length)}px`, // Adjust the spacing between card
               }}
             >
               {child}
